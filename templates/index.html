@@ -1,0 +1,35 @@
+{% extends "basic.html"%}
+
+<!-- body  -->
+{%block content%} {% load static %}
+
+<div style="margin-top: 10%" class="row g-5 align-items-center">
+  <div class="col-md-6 p-2 order-2 order-md-1 text-md-start text-center">
+    <h1 class="display-4 fw-bold">No need For You To Remember</h1>
+    <div class="mx-auto">
+      <p class="lead mt-3 mb-4 px-md-0 px-3">
+        Find a cheatsheet for all the most common programming languages and
+        frameworks with the online web app quick code.
+      </p>
+
+      <a
+        role="button"
+        href="{% url 'explore' %}"
+        class="btn btn-primary px-4 btn-lg"
+      >
+        Explore Languages
+      </a>
+    </div>
+  </div>
+  <div class="col-md-6 order-1 order-md-2 text-md-end text-center p-2">
+    <img
+      src="{% static 'hero.png' %}"
+      class="img-fluid"
+      id="hero-img"
+      alt="hero image"
+      width="55%"
+    />
+  </div>
+</div>
+
+{%endblock%}

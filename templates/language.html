@@ -1,0 +1,32 @@
+{% extends "basic.html"%}
+
+<!-- body  -->
+{%block content%}
+
+<h3 class="mb-5">{{language}}</h3>
+
+<div class="row g-5">
+  <!-- code  -->
+  <div class="col-md-9">
+    {% for code in codes %}
+    <div id="{{code.title}}" style="position: relative" class="mb-4">
+      <p class="mb-3">{{code.title}}</p>
+
+      <pre><button onclick="copyCode(this)" style="position: absolute; right: 7px;top: 45px;" class="btn btn-sm  copyBtn btn-outline-light">Copy</button><code>{{code.code}}</code></pre>
+    </div>
+    {%endfor%}
+  </div>
+  <!-- table of content  -->
+  <div class="col-md-3 sticky-top h-100 d-md-block d-none">
+    <h5 class="mb-3 mt-5">Contents</h5>
+    <ul class="list-group">
+      {% for code in codes %}
+      <li class="list-group-item">
+        <a href="#{{code.title}}"> {{code.title}} </a>
+      </li>
+      {%endfor%}
+    </ul>
+  </div>
+</div>
+
+{%endblock%}
