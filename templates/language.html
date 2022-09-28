@@ -9,8 +9,8 @@
   <!-- code  -->
   <div class="col-md-9">
     {% for code in codes %}
-    <div id="{{code.title}}" style="position: relative" class="mb-4">
-      <p class="mb-3">{{code.title}}</p>
+    <div id="{{code.slug}}" style="position: relative" class="mb-4">
+      <h5 class="mb-3">{{code.title}}</h5>
 
       <pre><button onclick="copyCode(this)" style="position: absolute; right: 7px;top: 45px;" class="btn btn-sm  copyBtn btn-outline-light">Copy</button><code>{{code.code}}</code></pre>
     </div>
@@ -22,7 +22,7 @@
     <ul class="list-group">
       {% for code in codes %}
       <li class="list-group-item">
-        <a href="#{{code.title}}"> {{code.title}} </a>
+        <a href="#{{code.slug}}"> {{code.title}} </a>
       </li>
       {%endfor%}
     </ul>

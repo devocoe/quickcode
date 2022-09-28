@@ -4,7 +4,11 @@ from django.contrib import admin
 
 from .models import Language,Code
 
+class LanguageAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':    ('name',)}
 
+class CodeAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':    ('title',)}
 
-admin.site.register(Language)
-admin.site.register(Code)
+admin.site.register(Language,LanguageAdmin)
+admin.site.register(Code,CodeAdmin)

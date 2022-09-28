@@ -1,1 +1,1 @@
-web: gunicorn 'quick_code.wsgi'
+web: gunicorn quick_code.wsgi

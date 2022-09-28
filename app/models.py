@@ -21,6 +21,7 @@ class Code(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           null=False, blank=False, editable=False)
     title = models.CharField(max_length=150)
+    slug = models.SlugField(max_length=100, unique=True)
     code = models.TextField(max_length=1000)
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
 
